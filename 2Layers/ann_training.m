@@ -17,7 +17,6 @@ trainError = zeros(1, noEpochs);
 testError = zeros(1, noEpochs);
 trReport = [];
 for epoch=1:noEpochs
-	i
 	tic();
 	[hlnn1 hlnn2 olnn terr] = backprop(tvec, tlab, hlnn1, hlnn2, olnn, learningRate);
 	clsRes = anncls(tvec, hlnn1, hlnn2, olnn);

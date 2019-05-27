@@ -2,7 +2,7 @@
 tlab += 1;
 tstl += 1;
 
-noHiddenNeurons = 100;
+noHiddenNeurons = 10;
 noEpochs = 50;
 learningRate = 0.001;
 
@@ -17,7 +17,6 @@ trainError = zeros(1, noEpochs);
 testError = zeros(1, noEpochs);
 trReport = [];
 for epoch=1:noEpochs
-	i
 	tic();
 	[hlnn olnn terr] = backprop(tvec, tlab, hlnn, olnn, learningRate);
 	clsRes = anncls(tvec, hlnn, olnn);

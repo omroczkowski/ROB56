@@ -2,7 +2,7 @@
 tlab += 1;
 tstl += 1;
 
-noHiddenNeurons = 10;
+noHiddenNeurons = 50;
 noEpochs = 50;
 learningRate = 0.001;
 
@@ -23,6 +23,7 @@ for epoch=1:noEpochs
 	cfmx = confMx(tlab, clsRes);
 	errcf = compErrors(cfmx);
 	trainError(epoch) = errcf(2);
+	learningRate = learningrate * 0.95;	
 
 	clsRes = anncls(tstv, hlnn, olnn);
 	cfmx = confMx(tstl, clsRes);
